@@ -10,7 +10,7 @@ markup = types.ReplyKeyboardMarkup(row_width=2)
 @bot.message_handler(commands=['all'])
 def get_definition(message):
     req = requests.get(
-        f'http://api.urbandictionary.com/v0/define?term={message.text}")')
+        'http://api.urbandictionary.com/v0/define?term={}")'.format(message.text))
 
     text = ""
 
@@ -34,7 +34,7 @@ def get_definition(message):
                      reply_markup=markup)
 
     req = requests.get(
-        f'http://api.urbandictionary.com/v0/define?term={message.text}")')
+        'http://api.urbandictionary.com/v0/define?term={}")'.format(message.text))
 
     text = ""
 
